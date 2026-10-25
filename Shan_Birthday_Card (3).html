@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7b243e">
+<title>For Shan, My Enanga ❤️</title>
+<style>
+:root{--wine:#79243f;--rose:#d76b86;--pink:#ffe5eb;--cream:#fff8f4;--gold:#e6bf78}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:#5c2034;background:radial-gradient(circle at top,#fff6f3,#f9dce4 60%,#e9b8c7);overflow-x:hidden}
+main{width:min(92%,680px);margin:0 auto;padding:28px 0 50px;text-align:center}
+.eyebrow{letter-spacing:3px;text-transform:uppercase;font:11px Arial,sans-serif;color:#a34b65}
+h1{font-size:clamp(2.2rem,8vw,4.2rem);font-weight:normal;line-height:1.04;margin:14px 0;color:var(--wine)}
+.subtitle{font-size:1.05rem;line-height:1.7;max-width:480px;margin:0 auto 22px}
+.panel{background:rgba(255,250,247,.82);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 45px #8b31501c;border-radius:24px;padding:24px 18px;margin:18px 0}
+button{font:600 14px Arial,sans-serif;letter-spacing:.3px;border:0;border-radius:999px;padding:13px 19px;cursor:pointer;background:var(--wine);color:white;box-shadow:0 7px 18px #79243f25;margin:5px;transition:transform .2s}
+button:hover{transform:translateY(-2px)}button.secondary{background:#f6d4de;color:var(--wine);box-shadow:none}
+.envelope-wrap{perspective:900px;max-width:330px;margin:24px auto 8px}
+.envelope{height:205px;position:relative;cursor:pointer;filter:drop-shadow(0 12px 12px #6f1d3c22);outline:none}
+.env-back{position:absolute;inset:25px 0 0;background:#eab2c3;border-radius:8px}
+.letter{position:absolute;left:8%;width:84%;height:150px;bottom:18px;background:#fffaf6;border-radius:6px;padding:18px 12px;display:flex;flex-direction:column;justify-content:center;transition:transform .8s;box-shadow:0 2px 7px #8c345022}
+.letter strong{font-size:1.2rem;font-weight:normal}
+.env-front{position:absolute;inset:auto 0 0;height:125px;background:#d9859f;clip-path:polygon(0 0,50% 65%,100% 0,100% 100%,0 100%);border-radius:0 0 8px 8px}
+.env-flap{position:absolute;inset:25px 0 auto;height:120px;background:#c86d8a;clip-path:polygon(0 0,100% 0,50% 85%);transform-origin:top;transition:transform .7s;z-index:3}
+.seal{position:absolute;z-index:4;top:105px;left:calc(50% - 20px);width:40px;height:40px;background:var(--wine);color:white;border-radius:50%;display:grid;place-items:center;font-size:20px;transition:opacity .3s}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:0}
+.envelope.open .letter{transform:translateY(-95px)}
+.envelope.open .seal{opacity:0}
+.hint{font:12px Arial,sans-serif;color:#a34b65}
+.hidden-note{display:none;margin:12px auto 0;padding:15px;border-radius:15px;background:#fff0f4;max-width:440px;line-height:1.7;animation:fade .45s}
+.hidden-note.show{display:block}
+.hearts{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:18px 0}
+.heart{font-size:27px;width:56px;height:56px;padding:0;background:#fff0f4;color:#a32f55;box-shadow:none;border:1px solid #f4c5d2}
+.heart:active{transform:scale(.94)}
+.cake{font-size:75px;line-height:1.2;filter:drop-shadow(0 6px 6px #b45a6a22)}
+.candle-note{font-size:.95rem;line-height:1.7}
+.final{font-size:1.12rem;line-height:1.9}
+.signature{font-style:italic;color:#a34b65;font-size:1.2rem}
+footer{font:11px Arial,sans-serif;letter-spacing:1px;color:#a34b65;margin-top:28px}
+#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.confetto{position:absolute;top:-20px;width:9px;height:13px;animation:fall 3.2s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(760deg);opacity:.9}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sparkle{color:#c88b35}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="confetti"></div>
+<main>
+  <div class="eyebrow">Made with all my heart, for you</div>
+  <h1>Happy Birthday,<br><span id="hisName">Shan</span> ❤️</h1>
+  <p class="subtitle">Enanga, if I could give you one thing today, it would be the chance to see yourself through my eyes—and understand how much you mean to me.</p>
+  <section class="panel">
+    <div class="eyebrow">First, open your letter</div>
+    <div class="envelope-wrap">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the birthday envelope">
+        <div class="env-back"></div>
+        <div class="letter"><strong>For my Shan 💌</strong><span style="font-size:12px;margin-top:8px">From the girl who fell for you at the office cafeteria…</span></div>
+        <div class="env-flap"></div><div class="env-front"></div><div class="seal">♥</div>
+      </div>
+    </div>
+    <div class="hint" id="envHint">Tap the envelope to open it</div>
+    <div class="hidden-note" id="letterNote">Enanga, I still remember the day I met you at the office cafeteria. I never knew that an ordinary day could become such a precious memory—or that I could fall for someone in a moment that seemed so simple. Somehow, you became someone my heart holds close. On your birthday, I wish you peace when life feels heavy, courage for every dream you chase, and happiness that stays long after the celebrations end. I hope you always feel loved, valued, and proud of the person you are becoming. Happy birthday, Shan. If I could make one wish for you, it would be that life is as gentle with your heart as you have become precious to mine. ❤️</div>
+  </section>
+
+  <section class="panel">
+    <div class="eyebrow">Little hearts, little truths</div>
+    <h2 style="font-weight:normal;margin:10px 0">Tap a heart to open a secret</h2>
+    <div class="hearts">
+      <button class="heart" aria-label="Open a secret message" data-note="Do you remember how ordinary the office cafeteria seemed? I did not know that meeting you there would become one of the sweetest beginnings in my heart.">♥</button>
+      <button class="heart" aria-label="Open a secret message" data-note="Shan, I hope this year brings you the success you work so hard for, peace on difficult days, and a thousand reasons to smile. I will always be cheering for you.">♥</button>
+      <button class="heart" aria-label="Open a secret message" data-note="Enanga, you do not have to be perfect to be precious to me. I love the real you—with your dreams, your little habits, and all the things that make you who you are.">♥</button>
+      <button class="heart" aria-label="Open a secret message" data-note="If I could keep one feeling forever, it would be the feeling of that first beginning—the day I met you and my heart quietly chose you.">♥</button>
+    </div>
+    <div class="hidden-note" id="secretNote" aria-live="polite">Your little secret will appear here. 💗</div>
+  </section>
+
+  <section class="panel">
+    <div class="eyebrow">Make a birthday wish</div>
+    <div class="cake" id="cake">🎂</div>
+    <p class="candle-note">Close your eyes, Enanga, make a wish, and remember that somewhere in this world there is a heart that wants beautiful things for you.</p>
+    <button id="wishBtn">✨ Make a wish!</button>
+    <p id="wishText" class="hidden-note">May this new year of your life bring you closer to every dream you carry. May you find strength when things are hard, calm when the world is loud, and joy in the little moments. You deserve so many beautiful things, Shan. Happy birthday! 🎉❤️</p>
+  </section>
+
+  <section class="panel">
+    <div class="eyebrow">One last thing</div>
+    <h2 style="font-weight:normal">A birthday promise 💞</h2>
+    <p class="final">Enanga, sometimes I wonder how a day as ordinary as the one at our office cafeteria could become so special to me. I came across you that day, and somewhere in that moment, my heart began a story I never expected. You became more than just someone I knew—you became someone I think of with tenderness, someone whose happiness matters to me, someone I want to see win in life.
+      <br><br>On your birthday, I wish I could wrap up every good thing in the world and place it in your hands. Since I cannot, I hope these words remind you that you are deeply cherished. Keep growing, keep dreaming, and keep being the person you are. No matter how busy life gets, I hope you never forget how special you are to me.
+      <br><br>Happy birthday, my Shan. Thank you for becoming such a beautiful part of my story. ❤️</p>
+    <p class="signature">With all my love, your Enanga ❤️</p>
+    <button id="musicBtn" class="secondary">♫ Play a little birthday melody</button>
+    <p class="hint">Or listen to “Anbulla Manna” from <em>Pokkisham</em>:</p>
+    <button id="songBtn" class="secondary" type="button">♡ Open our song</button>
+    <p class="hint">This opens a YouTube search so you can choose an official or available version.</p>
+    <button id="celebrateBtn">🎉 Celebrate one more time</button>
+  </section>
+  <footer>FOR SHAN · FROM HIS ENANGA · ALWAYS WITH LOVE ♥</footer>
+</main>
+<script>
+const envelope=document.getElementById('envelope');
+function openEnvelope(){envelope.classList.toggle('open');const opened=envelope.classList.contains('open');document.getElementById('letterNote').classList.toggle('show',opened);document.getElementById('envHint').textContent=opened?'A little love, just for you ❤️':'Tap the envelope to open it';}
+envelope.addEventListener('click',openEnvelope);
+envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope();}});
+document.querySelectorAll('.heart').forEach(btn=>btn.addEventListener('click',()=>{const note=document.getElementById('secretNote');note.textContent=btn.dataset.note;note.classList.add('show');btn.textContent='💗';}));
+function celebrate(){const area=document.getElementById('confetti');const symbols=['♥','✦','●','✧'];for(let i=0;i<85;i++){const p=document.createElement('span');p.className='confetto';p.textContent=symbols[Math.floor(Math.random()*symbols.length)];p.style.left=Math.random()*100+'%';p.style.animationDelay=(Math.random()*.8)+'s';p.style.color=['#b63d61','#e6bf78','#f3a7bb','#fff'][Math.floor(Math.random()*4)];p.style.fontSize=(12+Math.random()*13)+'px';p.style.background='transparent';area.appendChild(p);setTimeout(()=>p.remove(),4200);} }
+document.getElementById('wishBtn').addEventListener('click',()=>{document.getElementById('wishText').classList.add('show');document.getElementById('cake').textContent='🎂✨';celebrate();});
+document.getElementById('celebrateBtn').addEventListener('click',celebrate);
+document.getElementById('songBtn').addEventListener('click',()=>{window.open('https://www.youtube.com/results?search_query=Anbulla+Manna+Pokkisham+Tamil+song','_blank','noopener,noreferrer');});
+// A tiny original melody generated in the browser—no music file or paid service required.
+let audioCtx=null,playing=false,sequenceTimer=null,step=0;
+const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,783.99,659.25,587.33,523.25,392];
+function playNote(freq,when,duration){const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(.0001,when);gain.gain.exponentialRampToValueAtTime(.09,when+.03);gain.gain.exponentialRampToValueAtTime(.0001,when+duration);osc.connect(gain);gain.connect(audioCtx.destination);osc.start(when);osc.stop(when+duration+.04);}
+function melodyLoop(){if(!playing)return;const now=audioCtx.currentTime;playNote(notes[step%notes.length],now,.42);if(step%3===0)playNote(notes[(step+4)%notes.length]/2,now,.58);step++;sequenceTimer=setTimeout(melodyLoop,470);}
+document.getElementById('musicBtn').addEventListener('click',async()=>{const btn=document.getElementById('musicBtn');if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')await audioCtx.resume();playing=!playing;if(playing){btn.textContent='Ⅱ Pause the birthday melody';melodyLoop();}else{clearTimeout(sequenceTimer);btn.textContent='♫ Play a little birthday melody';}});
+</script>
+</body>
+</html>
